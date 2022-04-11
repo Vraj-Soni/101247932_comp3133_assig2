@@ -1,0 +1,145 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column" style="background-color: aqua;">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <app-header></app-header>
+
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Add a New Listing</h1>
+
+                <div class="row">
+                    <div class="col-8 mx-auto">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Add Listing Info Here</h1>
+                            </div>
+                            <form id="registerForm" class="user" name="registerForm"
+                                (ngSubmit)="rf.form.valid && create(rf)" #rf="ngForm" novalidate>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>Listing Id</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Id.." [(ngModel)]="listing.listing_id" #id="ngModel"
+                                            name="date" [ngClass]="{ 'is-invalid': rf.submitted && id.invalid }"
+                                            required>
+
+                                        <div *ngIf="rf.submitted && id.invalid" class="invalid-feedback">
+                                            <div *ngIf="id.errors.required">Listing Id is must</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>Listing Title</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Title.." [(ngModel)]="listing.listing_title" #title="ngModel"
+                                            name="title" [ngClass]="{ 'is-invalid': rf.submitted && title.invalid }"
+                                            required>
+
+                                        <div *ngIf="rf.submitted && title.invalid" class="invalid-feedback">
+                                            <div *ngIf="title.errors.required">Title of listing is must</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>Street</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Street.." [(ngModel)]="listing.street" #street="ngModel"
+                                            name="steet" [ngClass]="{ 'is-invalid': rf.submitted && street.invalid }"
+                                            required>
+
+                                        <div *ngIf="rf.submitted && street.invalid" class="invalid-feedback">
+                                            <div *ngIf="street.errors.required">Street is must</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>City</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="City.." [(ngModel)]="listing.city" #city="ngModel" name="city"
+                                            [ngClass]="{ 'is-invalid': rf.submitted && city.invalid }" required>
+
+                                        <div *ngIf="rf.submitted && city.invalid" class="invalid-feedback">
+                                            <div *ngIf="city.errors.required">City is must</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>Postal Code</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Potal Code.." [(ngModel)]="listing.postal_code" #code="ngModel"
+                                            name="code" [ngClass]="{ 'is-invalid': rf.submitted && code.invalid }"
+                                            required>
+
+                                        <div *ngIf="rf.submitted && code.invalid" class="invalid-feedback">
+                                            <div *ngIf="code.errors.required">Listing Code is required</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label>Price</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Price.." [(ngModel)]="listing.price" #price="ngModel"
+                                            name="price" [ngClass]="{ 'is-invalid': rf.submitted && price.invalid }"
+                                            required>
+
+                                        <div *ngIf="rf.submitted && price.invalid" class="invalid-feedback">
+                                            <div *ngIf="price.errors.required">Price is required</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <label>Description is required</label>
+                                        <textarea type="text" class="form-control form-control-user"
+                                            id="exampleFirstName" placeholder="Detail.."
+                                            [(ngModel)]="listing.description" #detail="ngModel" name="detail"
+                                            [ngClass]="{ 'is-invalid': rf.submitted && detail.invalid }" required>
+                                            </textarea>
+
+                                        <div *ngIf="rf.submitted && detail.invalid" class="invalid-feedback">
+                                            <div *ngIf="detail.errors.required">Detail is required</div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+
+                                <button type="submit" class="btn btn-warning btn-user btn-block">
+                                    Save
+                                </button>
+                                <hr>
+
+                            </form>
+                            <hr>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- End of Main Content -->
+
+
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>

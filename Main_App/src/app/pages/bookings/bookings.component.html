@@ -1,0 +1,98 @@
+<!-- Page Wrapper -->
+<div id="wrapper" style="background-color: black;">
+
+
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column"  style="background-color: greenyellow;">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <app-header></app-header>
+
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h2 mb-2 text-gray-800 font-style: italic " style="background-color: aqua; text-align: center; font-style: italic; color: white;">User Bookings</h1>
+
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary" style="background-color: aqua; text-align: center; font-style: italic; color: white;">Bookings</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table class="table table-bordered dataTable" id="dataTable" role="grid"
+                                            aria-describedby="dataTable_info" style="width: 100%;" width="100%"
+                                            cellspacing="0">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="sorting sorting_asc" tabindex="0"
+                                                        aria-controls="dataTable" rowspan="1" colspan="1"
+                                                        style="width: 57.2px;" aria-sort="ascending"
+                                                        aria-label="Name: activate to sort column descending">Listing Id
+                                                    </th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTable"
+                                                        rowspan="1" colspan="1" style="width: 61.2px;"
+                                                        aria-label="Position: activate to sort column ascending">
+                                                        Booking Id</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTable"
+                                                        rowspan="1" colspan="1" style="width: 49.2px;"
+                                                        aria-label="Office: activate to sort column ascending">
+                                                        Booking Date
+                                                    </th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTable"
+                                                        rowspan="1" colspan="1" style="width: 30.2px;"
+                                                        aria-label="Age: activate to sort column ascending">Start
+                                                        Date</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTable"
+                                                        rowspan="1" colspan="1" style="width: 68.2px;"
+                                                        aria-label="Start date: activate to sort column ascending">
+                                                        End Date
+                                                    </th>
+                                               
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr *ngFor="let item of bookings">
+                                                    <th>{{item.listing_id}}</th>
+                                                    <th>{{item.booking_id}}</th>
+                                                    <th>{{item.booking_date}}</th>
+                                                    <th>{{item.booking_start}}</th>
+                                                    <th>{{item.booking_end}}</th>
+
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- End of Main Content -->
+
+
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->

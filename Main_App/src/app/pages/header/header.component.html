@@ -1,0 +1,64 @@
+<!-- Topbar -->
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+
+
+
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" [routerLink]="['/listing']"
+                routerLinkActive="router-link-active" id="searchDropdown" style="background-color: black; font-style: italic;">
+                All added Listings:
+            </a>
+
+        </li>
+        <li class="nav-item" *ngIf="role && role == 'user'">
+            <a class="nav-link" href="javascript:void(0)" [routerLink]="['/bookings']"
+                routerLinkActive="router-link-active" id="searchDropdown" style="background-color: black; font-style: italic;">
+                Bookings
+            </a>
+
+        </li>
+
+        <li class="nav-item" *ngIf="role && role == 'admin'">
+            <a class="nav-link" href="javascript:void(0)" [routerLink]="['/listing/new']"
+                routerLinkActive="router-link-active" id="searchDropdown" style="background-color: black; font-style: italic;">
+                Add New Listing
+            </a>
+
+        </li>
+
+  
+
+
+
+
+        <div class="topbar-divider d-none d-sm-block"></div>
+
+        <li class="nav-item" *ngIf="role">
+            <a class="nav-link" href="javascript:void(0)" (click)="logout()" routerLinkActive="router-link-active"
+                id="searchDropdown"style="background-color: black; font-style: italic;">
+                Log out
+            </a>
+
+        </li>
+
+        <li class="nav-item" *ngIf="!role">
+            <a class="nav-link" href="javascript:void(0)" [routerLink]="['/login']"
+                routerLinkActive="router-link-active" id="searchDropdown" style="background-color: black; font-style: italic;" >
+                Login
+            </a>
+
+        </li>
+
+
+    </ul>
+
+</nav>
+<!-- End of Topbar -->

@@ -1,0 +1,97 @@
+<div class="container" style="background-color: aqua;">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-8 mx-auto">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4" style="background-color:red">Create an Account!</h1>
+                        </div>
+                        <form id="registerForm" class="user" name="registerForm"
+                            (ngSubmit)="rf.form.valid && create(rf)" #rf="ngForm" novalidate>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        placeholder="First Name" [(ngModel)]="user.firstName" #fname="ngModel" name="fname"
+                                        [ngClass]="{ 'is-invalid': rf.submitted && fname.invalid }" 
+                                        required>
+
+                                    <div *ngIf="rf.submitted && fname.invalid" class="invalid-feedback">
+                                        <div *ngIf="fname.errors.required">First Name is required</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                        placeholder="Last Name" [(ngModel)]="user.lastName" #lname="ngModel" name="lname"
+                                        [ngClass]="{ 'is-invalid': rf.submitted && lname.invalid }" 
+                                        required>
+
+                                    <div *ngIf="rf.submitted && lname.invalid" class="invalid-feedback">
+                                        <div *ngIf="lname.errors.required">Last Name is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="User Name" [(ngModel)]="user.userName" #uname="ngModel" name="uname"
+                                    [ngClass]="{ 'is-invalid': rf.submitted && uname.invalid }" 
+                                    required>
+
+                                <div *ngIf="rf.submitted && uname.invalid" class="invalid-feedback">
+                                    <div *ngIf="uname.errors.required">User Name is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="Email Address" [(ngModel)]="user.email" #email="ngModel" name="uemail"
+                                    [ngClass]="{ 'is-invalid': rf.submitted && email.invalid }" 
+                                    required>
+
+                                <div *ngIf="rf.submitted && email.invalid" class="invalid-feedback">
+                                    <div *ngIf="email.errors.required">Email is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <input type="password" class="form-control form-control-user"
+                                        id="exampleInputPassword" placeholder="Password" [(ngModel)]="user.password" #password="ngModel" name="upassword"
+                                        [ngClass]="{ 'is-invalid': rf.submitted && password.invalid }" 
+                                        required>
+    
+                                    <div *ngIf="rf.submitted && password.invalid" class="invalid-feedback">
+                                        <div *ngIf="password.errors.required">Password is required</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <select class="form-control" [(ngModel)]="user.type" #type="ngModel" name="utype"
+                                    [ngClass]="{ 'is-invalid': rf.submitted && type.invalid }" 
+                                    required>
+                                        <option value="user">Users</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <button type="submit"   class="btn btn-success btn-user btn-block">
+                                Register Account
+                            </button>
+                            <hr>
+
+                        </form>
+                        <hr>
+
+                        <div class="text-center">
+                            <a class="small" href="javascript:void(0)" [routerLink]="['/login']" routerLinkActive="router-link-active" >Already have an account? Login!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
